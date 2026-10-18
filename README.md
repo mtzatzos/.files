@@ -40,7 +40,7 @@ The oh-my-zsh `git` and `kubectl` plugins supply the other shortcuts, for exampl
    ./install.sh
    ```
 
-   The script also clones oh-my-zsh and powerlevel10k if they are not there. If a target file exists, the script moves it to `<name>.backup-<timestamp>`. You can run the script again safely.
+   The script also installs oh-my-zsh, powerlevel10k and [SDKMAN](https://sdkman.io) if they are not there. If a target file exists, the script moves it to `<name>.backup-<timestamp>`. You can run the script again safely.
 
 4. Install the tools that do not come from Homebrew:
    - [Claude Code](https://claude.com/claude-code)
@@ -54,7 +54,6 @@ The oh-my-zsh `git` and `kubectl` plugins supply the other shortcuts, for exampl
      ```
 
      Then run `openspec init` in each project that uses OpenSpec.
-   - [SDKMAN](https://sdkman.io), if you need it.
    - Rust (`rustup`), if you need it.
    - Google Cloud SDK, if you need it.
 

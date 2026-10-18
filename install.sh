@@ -33,6 +33,12 @@ if [[ ! -d "$P10K" ]]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$P10K"
 fi
 
+# SDKMAN is not in Homebrew. .zshrc already loads it, so the installer must not change rc files.
+# The installer uses $SDKMAN_DIR when it is set, so check the same directory.
+if [[ ! -d "${SDKMAN_DIR:-$HOME/.sdkman}" ]]; then
+  curl -fsSL "https://get.sdkman.io?rcupdate=false" | bash
+fi
+
 # zsh
 link zsh/.zshrc    "$HOME/.zshrc"
 link zsh/.zprofile "$HOME/.zprofile"
