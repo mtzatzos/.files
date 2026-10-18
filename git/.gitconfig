@@ -12,11 +12,17 @@
 	editor = nvim
 	pager = hunk pager
 	excludesfile = ~/.gitignore_global
+[diff]
+	tool = hunk
+[difftool]
+	prompt = false
+[difftool "hunk"]
+	cmd = hunk difftool \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [alias]
 	a = add
 	b = branch
 	c = commit
-	d = diff
+	d = !hunk diff
 	f = fetch
 	g = grep
 	l = log
