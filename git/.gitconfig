@@ -1,0 +1,51 @@
+[user]
+	name = tzatzosm
+	email = marsel.tzatzos@gmail.com
+	signingkey = 4A8147948CC2367F
+[commit]
+	gpgsign = false
+[gpg]
+	program = gpg1
+[push]
+	autoSetupRemote = true
+[core]
+	editor = nvim
+	pager = hunk pager
+	excludesfile = ~/.gitignore_global
+[alias]
+	a = add
+	b = branch
+	c = commit
+	d = diff
+	f = fetch
+	g = grep
+	l = log
+	m = merge
+	o = checkout
+	p = pull
+	s = status
+	w = whatchanged	
+	
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+
+	rebase-last = rebase -i HEAD~2
+	force-push = push --force-with-lease
+
+	reset-origin = reset --hard @{u}
+
+	cfix = !git a . && git c -m asda && git rebase-last
+
+	pull-latest = "!f() { \
+		b=$(git symbolic-ref --short HEAD) && \
+		git fetch && \
+		git checkout main && \
+		if [ \"$b\" = \"main\" ]; then \
+			echo \"You are already on 'main'. Aborting rebase.\" >&2; \
+			exit 1; \
+		fi; \
+		git pull && \
+		git checkout \"$b\" && \
+		git rebase -i main; \
+  	}; f"

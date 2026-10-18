@@ -1,0 +1,6 @@
+onboarding = false
+
+[keys]
+next_agent = "prefix+]"
+previous_agent = "prefix+["
+
