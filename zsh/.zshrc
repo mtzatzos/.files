@@ -69,6 +69,9 @@ fi
 
 ########### Hunk ###########
 export PATH="$HOME/.hunk/bin:$PATH"
+# hunk pager sends output that is not a diff (empty diff, git log) to this pager.
+# -F quits when the output fits on one screen, so an empty diff does not open an empty page.
+export HUNK_TEXT_PAGER="less -FRX"
 
 ########### project-navigator ###########
 # Let `pn` change the directory of the shell.
