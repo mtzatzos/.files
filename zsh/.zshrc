@@ -8,6 +8,10 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git kubectl poetry)
 
+# Keep the completion dump out of $HOME. oh-my-zsh does not make this directory.
+export ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump-${ZSH_VERSION}"
+[[ -d "${ZSH_COMPDUMP:h}" ]] || mkdir -p "${ZSH_COMPDUMP:h}"
+
 # Homebrew completions must be on FPATH before oh-my-zsh runs compinit.
 # https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 if command -v brew >/dev/null; then
