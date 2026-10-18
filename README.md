@@ -2,8 +2,6 @@
 
 My macOS development setup: zsh, Neovim (LazyVim), git, k9s, herdr, hunk and Claude Code.
 
-![Terminal screenshot](docs/screenshot.png)
-
 ## What is here
 
 | Path | Contents | Linked to |
