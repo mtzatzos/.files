@@ -44,9 +44,19 @@ The oh-my-zsh `git` and `kubectl` plugins supply the other shortcuts, for exampl
 
 4. Install the tools that do not come from Homebrew:
    - [Claude Code](https://claude.com/claude-code)
-   - herdr. After you install it, let herdr install its Claude Code integration. This makes `~/.claude/hooks/herdr-agent-state.sh`, which `claude/settings.json` calls.
+   - [herdr](https://herdr.dev). After you install it, let herdr install its Claude Code integration. This makes `~/.claude/hooks/herdr-agent-state.sh`, which `claude/settings.json` calls.
    - [hunk](https://hunk.dev). Git uses it as the pager.
-   - SDKMAN, Rust (`rustup`) and the Google Cloud SDK, if you need them.
+   - [OpenSpec](https://github.com/Fission-AI/OpenSpec) and the other global npm packages. The `Brewfile` lists them, but `brew bundle` cannot install them before Node exists. Open a new shell, install Node with nvm and run `brew bundle` again:
+
+     ```sh
+     nvm install --lts
+     brew bundle --file Brewfile
+     ```
+
+     Then run `openspec init` in each project that uses OpenSpec.
+   - [SDKMAN](https://sdkman.io), if you need it.
+   - Rust (`rustup`), if you need it.
+   - Google Cloud SDK, if you need it.
 
 ## Not in this repo
 
